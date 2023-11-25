@@ -1,4 +1,5 @@
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -6,7 +7,6 @@ DOCKER_IMAGE = 'yt-dlp-ffmpeg'
 
 
 def main() -> int:
-    import sys
     if 'docker' not in sys.argv:
         cmd = ('yt-dlp', *sys.argv[1:])
         return subprocess.run(cmd).returncode
